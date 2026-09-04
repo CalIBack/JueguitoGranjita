@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://nf2b55s4js3w"]
+
+[ext_resource type="Texture2D" uid="uid://dgqfcrfefdxfc" path="res://sprites/caja.png" id="1_lwrpj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3j4xb"]
+size = Vector2(16, 16)
+
+[node name="Caja" type="StaticBody2D"]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lwrpj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3j4xb")

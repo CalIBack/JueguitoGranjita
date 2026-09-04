@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://drh2fx0icx4vq"]
+
+[ext_resource type="Script" uid="uid://bfutjmp2pdii3" path="res://escenas/main/main.gd" id="1_8ujuo"]
+[ext_resource type="PackedScene" uid="uid://curyfruh0sv34" path="res://escenas/manzana/manzana.tscn" id="2_sj1lj"]
+[ext_resource type="PackedScene" uid="uid://d2v1vnch7xov1" path="res://escenas/escenario/escenario.tscn" id="3_lnepl"]
+[ext_resource type="PackedScene" uid="uid://bi4sjldh03vp0" path="res://escenas/personaje/personaje.tscn" id="4_e8ae5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
+size = Vector2(512, 288)
+
+[node name="Main" type="Node2D" unique_id=1625456764 node_paths=PackedStringArray("area_spawn", "personaje1", "personaje2", "label_puntos_p1", "label_maximo_p1", "label_puntos_p2", "label_maximo_p2", "label_tiempo", "ronda_timer")]
+script = ExtResource("1_8ujuo")
+manzana_scene = ExtResource("2_sj1lj")
+cantidad_manzanas = 20
+area_spawn = NodePath("Area2D")
+personaje1 = NodePath("Jugador1")
+personaje2 = NodePath("Jugador2")
+label_puntos_p1 = NodePath("CanvasLayer/Control/Jugador1/Puntos")
+label_maximo_p1 = NodePath("CanvasLayer/Control/Jugador1/Max")
+label_puntos_p2 = NodePath("CanvasLayer/Control/Jugador2/Puntos")
+label_maximo_p2 = NodePath("CanvasLayer/Control/Jugador2/Max")
+label_tiempo = NodePath("CanvasLayer/Control/Tiempo/TiempoL")
+ronda_timer = NodePath("Timer")
+
+[node name="Escenario" parent="." unique_id=1677764488 instance=ExtResource("3_lnepl")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=621203868]
+zoom = Vector2(2.255, 2.255)
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+
+[node name="Jugador1" parent="." unique_id=1262284857 instance=ExtResource("4_e8ae5")]
+position = Vector2(-80, 0)
+
+[node name="Jugador2" parent="." unique_id=1195537027 instance=ExtResource("4_e8ae5")]
+position = Vector2(80, 0)
+numero_jugador = 2
+
+[node name="Area2D" type="Area2D" parent="." unique_id=901910259]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1282249979]
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_orvxw")
+
+[node name="Timer" type="Timer" parent="." unique_id=1642517486]
+wait_time = 10.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1286705973]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1765496439]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Jugador1" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=521573701]
+layout_mode = 1
+offset_left = 3.9999998
+offset_top = 3.9999998
+offset_right = 44.0
+offset_bottom = 54.0
+scale = Vector2(1.82, 1.82)
+
+[node name="Puntos" type="Label" parent="CanvasLayer/Control/Jugador1" unique_id=367551690]
+layout_mode = 2
+text = "p1"
+
+[node name="Max" type="Label" parent="CanvasLayer/Control/Jugador1" unique_id=1864631689]
+layout_mode = 2
+text = "p2
+"
+
+[node name="Jugador2" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1241652589]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -75.99988
+offset_top = 3.9999998
+offset_right = -36.46985
+offset_bottom = 54.0
+grow_horizontal = 0
+scale = Vector2(1.82, 1.82)
+
+[node name="Puntos" type="Label" parent="CanvasLayer/Control/Jugador2" unique_id=1113061037]
+layout_mode = 2
+text = "p2eeeeeeeeeeeeeee"
+horizontal_alignment = 2
+
+[node name="Max" type="Label" parent="CanvasLayer/Control/Jugador2" unique_id=899967315]
+layout_mode = 2
+text = "m2"
+horizontal_alignment = 2
+
+[node name="Tiempo" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=2118065102]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 50.0
+grow_horizontal = 2
+scale = Vector2(2.08, 2.08)
+
+[node name="TiempoL" type="Label" parent="CanvasLayer/Control/Tiempo" unique_id=166724337]
+layout_mode = 2
+text = "10"
+horizontal_alignment = 1

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://curyfruh0sv34"]
+
+[ext_resource type="Script" uid="uid://k3otum0cd3o6" path="res://escenas/manzana/manzana.gd" id="1_6xte8"]
+[ext_resource type="Texture2D" uid="uid://bqqd0dj205htm" path="res://sprites/manzana.png" id="2_46q0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlep3"]
+size = Vector2(16, 16)
+
+[node name="Manzana" type="Area2D" unique_id=198902969]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_6xte8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=11412245]
+texture = ExtResource("2_46q0c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2034856826]
+shape = SubResource("RectangleShape2D_jlep3")
