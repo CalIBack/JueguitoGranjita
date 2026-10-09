@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://escenas/personaje/movimiento/eficiente/maquina_estados.gd" id="1_maq"]
+[ext_resource type="Script" path="res://escenas/personaje/movimiento/eficiente/estados/quieto.gd" id="2_qui"]
+[ext_resource type="Script" path="res://escenas/personaje/movimiento/eficiente/estados/caminando.gd" id="3_cam"]
+[ext_resource type="Script" path="res://escenas/personaje/movimiento/eficiente/estados/saltando.gd" id="4_sal"]
+[ext_resource type="Script" path="res://escenas/personaje/movimiento/eficiente/estados/cayendo.gd" id="5_cay"]
+
+[node name="Movimiento" type="Node" node_paths=PackedStringArray("estado_inicial")]
+script = ExtResource("1_maq")
+estado_inicial = NodePath("Quieto")
+
+[node name="Quieto" type="Node" parent="."]
+script = ExtResource("2_qui")
+
+[node name="Caminando" type="Node" parent="."]
+script = ExtResource("3_cam")
+
+[node name="Saltando" type="Node" parent="."]
+script = ExtResource("4_sal")
+
+[node name="Cayendo" type="Node" parent="."]
+script = ExtResource("5_cay")

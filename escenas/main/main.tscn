@@ -1,23 +1,13 @@
 [gd_scene format=3 uid="uid://drh2fx0icx4vq"]
 
-[ext_resource type="Script" uid="uid://bfutjmp2pdii3" path="res://escenas/main/main.gd" id="1_8ujuo"]
-[ext_resource type="PackedScene" uid="uid://curyfruh0sv34" path="res://escenas/manzana/manzana.tscn" id="2_sj1lj"]
+[ext_resource type="Script" uid="uid://dkajlbr282fbb" path="res://escenas/main/main.gd" id="1_8ujuo"]
 [ext_resource type="PackedScene" uid="uid://d2v1vnch7xov1" path="res://escenas/escenario/escenario.tscn" id="3_lnepl"]
 [ext_resource type="PackedScene" uid="uid://bi4sjldh03vp0" path="res://escenas/personaje/personaje.tscn" id="4_e8ae5"]
 
-[node name="Main" type="Node2D" unique_id=1625456764 node_paths=PackedStringArray("area_spawn", "personaje1", "personaje2", "label_puntos_p1", "label_maximo_p1", "label_puntos_p2", "label_maximo_p2", "label_tiempo", "ronda_timer")]
+[node name="Main" type="Node2D" unique_id=1625456764 node_paths=PackedStringArray("camara", "personaje1")]
 script = ExtResource("1_8ujuo")
-manzana_scene = ExtResource("2_sj1lj")
-cantidad_manzanas = 20
-area_spawn = NodePath("")
+camara = NodePath("Camera2D")
 personaje1 = NodePath("Jugador1")
-personaje2 = NodePath("")
-label_puntos_p1 = NodePath("CanvasLayer/Control/Jugador1/Puntos")
-label_maximo_p1 = NodePath("CanvasLayer/Control/Jugador1/Max")
-label_puntos_p2 = NodePath("CanvasLayer/Control/Jugador2/Puntos")
-label_maximo_p2 = NodePath("CanvasLayer/Control/Jugador2/Max")
-label_tiempo = NodePath("CanvasLayer/Control/Tiempo/TiempoL")
-ronda_timer = NodePath("")
 
 [node name="Escenario" parent="." unique_id=1677764488 instance=ExtResource("3_lnepl")]
 
