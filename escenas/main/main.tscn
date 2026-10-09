@@ -5,22 +5,19 @@
 [ext_resource type="PackedScene" uid="uid://d2v1vnch7xov1" path="res://escenas/escenario/escenario.tscn" id="3_lnepl"]
 [ext_resource type="PackedScene" uid="uid://bi4sjldh03vp0" path="res://escenas/personaje/personaje.tscn" id="4_e8ae5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_orvxw"]
-size = Vector2(512, 288)
-
 [node name="Main" type="Node2D" unique_id=1625456764 node_paths=PackedStringArray("area_spawn", "personaje1", "personaje2", "label_puntos_p1", "label_maximo_p1", "label_puntos_p2", "label_maximo_p2", "label_tiempo", "ronda_timer")]
 script = ExtResource("1_8ujuo")
 manzana_scene = ExtResource("2_sj1lj")
 cantidad_manzanas = 20
-area_spawn = NodePath("Area2D")
+area_spawn = NodePath("")
 personaje1 = NodePath("Jugador1")
-personaje2 = NodePath("Jugador2")
+personaje2 = NodePath("")
 label_puntos_p1 = NodePath("CanvasLayer/Control/Jugador1/Puntos")
 label_maximo_p1 = NodePath("CanvasLayer/Control/Jugador1/Max")
 label_puntos_p2 = NodePath("CanvasLayer/Control/Jugador2/Puntos")
 label_maximo_p2 = NodePath("CanvasLayer/Control/Jugador2/Max")
 label_tiempo = NodePath("CanvasLayer/Control/Tiempo/TiempoL")
-ronda_timer = NodePath("Timer")
+ronda_timer = NodePath("")
 
 [node name="Escenario" parent="." unique_id=1677764488 instance=ExtResource("3_lnepl")]
 
@@ -32,26 +29,13 @@ drag_right_margin = 0.0
 drag_bottom_margin = 0.0
 
 [node name="Jugador1" parent="." unique_id=1262284857 instance=ExtResource("4_e8ae5")]
-position = Vector2(-80, 0)
-
-[node name="Jugador2" parent="." unique_id=1195537027 instance=ExtResource("4_e8ae5")]
-position = Vector2(80, 0)
-numero_jugador = 2
-
-[node name="Area2D" type="Area2D" parent="." unique_id=901910259]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1282249979]
-position = Vector2(4, 0)
-shape = SubResource("RectangleShape2D_orvxw")
-
-[node name="Timer" type="Timer" parent="." unique_id=1642517486]
-wait_time = 10.0
-autostart = true
+position = Vector2(-32, 116)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1286705973]
+visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1765496439]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
