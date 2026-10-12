@@ -1,10 +1,6 @@
 class_name EstadoJugador
 extends Node
 
-# Base de todos los estados. Cada estado es un nodo hijo de la maquina.
-# fisica() devuelve el nombre del proximo estado, o "" para quedarse.
-# Asi ningun estado necesita conocer a la maquina: solo dice a donde ir.
-
 var personaje: Personaje
 
 func entrar():
@@ -15,8 +11,6 @@ func salir():
 
 func fisica(_delta) -> String:
 	return ""
-
-# Ayudas que comparten todos los estados
 
 func direccion() -> float:
 	return Input.get_axis("izquierda" + personaje.sufijo, "derecha" + personaje.sufijo)

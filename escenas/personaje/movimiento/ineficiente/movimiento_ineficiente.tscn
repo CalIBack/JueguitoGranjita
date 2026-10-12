@@ -1,6 +1,6 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://djpdarov061a2"]
 
-[ext_resource type="Script" path="res://escenas/personaje/movimiento/ineficiente/movimiento_ineficiente.gd" id="1_mov"]
+[ext_resource type="Script" uid="uid://chnx51ua0etq2" path="res://escenas/personaje/movimiento/ineficiente/movimiento_ineficiente.gd" id="1_mov"]
 
-[node name="Movimiento" type="Node"]
+[node name="Movimiento" type="Node" unique_id=1960117592]
 script = ExtResource("1_mov")

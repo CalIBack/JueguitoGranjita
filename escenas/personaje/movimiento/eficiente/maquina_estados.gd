@@ -1,11 +1,6 @@
 class_name MaquinaEstados
 extends Node
 
-# VERSION EFICIENTE
-# La maquina solo corre el estado activo y hace los cambios.
-# Toda la logica de cada estado vive en su propio script (carpeta estados/),
-# asi que agregar uno nuevo es crear un nodo hijo mas, sin tocar los otros.
-
 @export var estado_inicial: EstadoJugador
 @export var mostrar_cambios = false
 

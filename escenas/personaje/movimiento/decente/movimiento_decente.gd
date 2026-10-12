@@ -1,11 +1,5 @@
 extends Node
 
-# VERSION DECENTE
-# Las banderas se reemplazan por un solo "estado" a la vez (enum).
-# Cada rama del match hace lo suyo y decide a donde pasar.
-# Es mucho mas facil de leer, pero todos los estados siguen
-# viviendo en el mismo archivo.
-
 enum Estado { QUIETO, CAMINANDO, SALTANDO, CAYENDO }
 
 var estado = Estado.QUIETO

@@ -1,10 +1,5 @@
 extends Node
 
-# VERSION INEFICIENTE
-# Todo pasa en un solo _physics_process, controlado con banderas sueltas.
-# Funciona, pero cada "if" tiene que acordarse de las demas banderas
-# para no pisarse, y agregar algo nuevo obliga a revisar todo el bloque.
-
 var personaje
 var esta_saltando = false
 var esta_cayendo = false
